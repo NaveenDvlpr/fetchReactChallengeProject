@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.App {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.users{
+    grid-column: 1;
+}
+
+.posts {
+    grid-column: 2;
+}
+
+.comments {
+    grid-column: 3;
+}
+
+button {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;;
+    border-radius: 10px;
+}
+
+.list {
+    list-style-type: disc;
+}
