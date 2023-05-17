@@ -20,14 +20,16 @@
 .comments {
     grid-column: 3;
 }
+.list {
+    grid-column: 1/4;
+    padding: 0.5rem;
+}
+
+
 
 button {
     width: 100%;
     padding: 1rem;
     font-size: 1rem;;
     border-radius: 10px;
-}
-
-.list {
-    list-style-type: disc;
 }

@@ -2,25 +2,37 @@ import Users from "./Users";
 import Posts from "./Posts";
 import Comments from "./Comments";
 import Content from "./Content";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 
 function App() {
 
-  const [content, setContent] = useState(
-      ["naveen", "joshna"]
-    );
+  const URL = "https://jsonplaceholder.typicode.com";
+  const [choice, setChoice] = useState("/users")
+  const [content, setContent] = useState([]);
+
+  useEffect(
+    () => {
+      const fetchData = async () => {
+        const res = await fetch(URL+choice);
+        const data = await res.json();
+        setContent(data);
+      }
+      fetchData();
+    }
+    ,[choice]
+  );
 
   return (
     <div className="App">
       <Users 
-        setContent={setContent}
+        setChoice={setChoice}
       />
       <Posts 
-        setContent={setContent}
+        setChoice={setChoice}
       />
       <Comments 
-        setContent={setContent}
+        setChoice={setChoice}
       />
       <Content 
         content={content}

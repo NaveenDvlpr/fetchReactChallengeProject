@@ -1,11 +1,15 @@
 import React from 'react';
 
-const Comments = ({setContent}) => {
+const Comments = ({setChoice}) => {
   return (
     <div
         className='comments'
     >
-      <button>
+      <button
+        onClick={() => {
+          setChoice("/comments")
+        }}
+      >
         Comments
       </button>
     </div>

@@ -1,10 +1,14 @@
 import React from 'react';
 
-const Posts = ({setContent}) => {
+const Posts = ({setChoice}) => {
   return (
-    <div>
+    <div
+        className='posts' 
+    >
       <button
-        className='posts'
+        onClick={()=> {
+          setChoice("/posts");
+        }}
       >
         Posts
       </button>
